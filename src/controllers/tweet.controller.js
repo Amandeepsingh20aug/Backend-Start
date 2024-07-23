@@ -103,7 +103,7 @@ const deleteTweet = asyncHandler(async (req, res) => {
         throw new ApiError(400 , "Tweet id does not exist")
     }
 
-    const deleteTweet = await Tweet.findByIdAndUpdate(tweetId)
+    const deleteTweet = await Tweet.findByIdAndDelete(tweetId)
 
     if(!deleteTweet){
         throw new ApiError(404, "Tweet not found");
